@@ -3,18 +3,22 @@ import { Text, View } from 'react-native';
 import { Container, Body, Content, Header } from 'native-base';
 import styles from './style';
 import strings from '../../Config/Strings';
+import HeaderBase from '../../Components/HeaderBase';
 
 
 class index extends Component {
 
 
+    constructor(props) {
+        super(props);
+        
+    }
+
     render() {
         return (
             <Container>
                 <Header style={styles.header}>
-                    <View style={styles.viewHeader}>
-                        <Text>{strings.homeScreen.titleHeader}</Text>
-                    </View>
+                    <HeaderBase title={strings.homeScreen.titleHeader} />
                 </Header>
                 <Body>
                     <Content>
