@@ -6,6 +6,7 @@ import Styles from '../../Config/Styles';
 import strings from '../../Config/Strings';
 import HeaderBase from '../../Components/HeaderBase';
 import Loading from '../../Components/Loading';
+import axios from 'axios';
 
 
 class index extends Component {
@@ -27,9 +28,9 @@ class index extends Component {
 
     getListData() {
         this.setState({ loading: true });
-        fetch('https://jsonplaceholder.typicode.com/photos')
+        axios.get('/photos')
             .then(data => {
-                this.setState({ listData: JSON.parse(data._bodyText).slice(0, 10) })
+                this.setState({ listData: data.data.slice(0, 10) })
                 this.setState({ loading: false });
             })
             .catch(error => {
