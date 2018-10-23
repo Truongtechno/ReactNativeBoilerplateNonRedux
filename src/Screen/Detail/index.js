@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, TextInput } from 'react-native';
 import { Container, Body, Content, Header, Button, Item } from 'native-base';
 import HeaderBase from '../../Components/HeaderBase';
-import Styles from '../../Config/Styles';
-import strings from '../../Config/Strings';
+import Config from '../../Config';
 import getNullable from '../../Config/Helper';
+import Style from './style';
 
 class index extends Component {
 
@@ -24,19 +24,19 @@ class index extends Component {
     render() {
         return (
             <Container>
-                <Header style={Styles.header}>
-                    <HeaderBase title={strings.detailScreen.titleHeader} navigation={this.props.navigation} />
+                <Header style={Config.Styles.header}>
+                    <HeaderBase title={Config.String.detailScreen.titleHeader} navigation={this.props.navigation} />
                 </Header>
                 <Body>
                     <Content>
                         <View>
                             <TextInput
-                                style={{ width: 200, height: 40, borderWidth: 1, borderColor: '#CACACA', margin: 10 }}
+                                style={Style.textInput}
                                 value={this.state.inputValue}
                                 onChangeText={(value) => this.setState({ inputValue: value })}
                             />
-                            <Button full style={{ flex: 1 }} onPress={this.handleAdd} >
-                                <Text style={{ flex: 1, textAlign: 'center', color: 'white', fontSize: 17 }}>Add</Text>
+                            <Button full style={Style.button} onPress={this.handleAdd} >
+                                <Text style={Style.textButton}>Add</Text>
                             </Button>
                         </View>
                     </Content>

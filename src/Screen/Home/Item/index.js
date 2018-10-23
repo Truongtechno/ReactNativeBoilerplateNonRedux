@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import Style from './style';
 
 class index extends Component {
   constructor(props) {
@@ -9,9 +10,17 @@ class index extends Component {
   }
 
   render() {
+    const item = this.props.item;
     return (
       <View>
-        <Text> textInComponent </Text>
+        <View style={Style.parrentView}>
+          <Image
+            style={Style.image}
+            source={{ uri: item.url }}
+          />
+          <Text style={Style.text}>{item.title}</Text>
+        </View>
+        <View style={Style.lineSeparator} />
       </View>
     );
   }
