@@ -1,27 +1,6 @@
-# CodeBaseRN
-Forder structure:
-├──Asset
-├       ├──Images
-├──Components
-├──     ├──Loading
-├──     ├──HeaderBase
-├──     ├── ...
-├──Config
-├──     ├──Color
-├──     ├──Constant
-├──     ├──Helper
-├──     ├──ReacttoTron
-├──     ├──Strings
-├──     ├──Styles
-├──Screen
-├──     ├──HomeScreen
-├──     ├──DetailScreen
-├──     ├── ...
-├──Service
-├──     ├──UserService
-├──Theme
-├──     ├──NativeBaseTheme
-
-Coding Rule
-- Should use Javascript in project
-- Use ES6
+open# CodeBaseRN
+-Basic Rules
+   + Only include one React component per file.
+       .  However, multiple Stateless, or Pure, Components are allowed per file. eslint: react/no-multi-comp.
+    + Always use JSX syntax.
+    + Do not use React.createElement unless you’re initializing the app from a file that is not JSX.
