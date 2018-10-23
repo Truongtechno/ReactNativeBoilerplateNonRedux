@@ -1,21 +1,41 @@
-import React, {Component} from 'react';
-import { Text, View} from 'react-native';
-import { Container, Body, Content, Header } from 'native-base';
+import React, { Component } from 'react';
+import { Text, View, TextInput } from 'react-native';
+import { Container, Body, Content, Header, Button } from 'native-base';
+import HeaderBase from '../../Components/HeaderBase';
 import styles from './style';
+import Styles from '../../Config/Styles';
+import strings from '../../Config/Strings';
 
 class index extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state= {
+            inputValue: ''
+        }
+    }
+
+    handleAdd = () => {
+        console.log('value:', this.state.inputValue);
+    }
 
     render() {
         return (
             <Container>
-                <Header>
-                    
+                <Header style={Styles.header}>
+                    <HeaderBase title={strings.detailScreen.titleHeader} navigation={this.props.navigation} />
                 </Header>
                 <Body>
                     <Content>
                         <View>
-                            <Text>Detail</Text>
+                            <TextInput 
+                            style={{ width: 200, height: 40, borderWidth: 1, borderColor: '#CACACA', margin:10 }} 
+                            value={this.state.inputValue}
+                            onChange={(value) => this.setState({ inputValue: value})}
+                            />
+                            <Button full style={{ flex: 1 }} onPress={this.handleAdd} >
+                                <Text style={{ flex: 1, textAlign: 'center', color: 'white', fontSize: 17 }}>Add</Text>
+                            </Button>
                         </View>
                     </Content>
                 </Body>
