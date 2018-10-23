@@ -1,7 +1,7 @@
 open# CodeBaseRN
 Forder structure:</br>
 ├──Asset</br>
-├       ├──Images</br>
+├──     ├──Images</br>
 ├──Components</br>
 ├──     ├──Loading</br>
 ├──     ├──HeaderBase</br>
