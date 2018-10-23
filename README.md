@@ -24,4 +24,4 @@ Forder structure:
 
 Coding Rule
 - Should use Javascript in project
-- 
+- Use ES6
