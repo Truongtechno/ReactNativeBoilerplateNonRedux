@@ -22,7 +22,29 @@ Forder structure:
 ├──Theme
 ├──     ├──NativeBaseTheme
 ```
-Basic Rules
+How to run:
+```
+    - npm install or yarn install
+    - react-native run-ios
+    - react-native run-android
+```
+
+Coding rule:
+```
+    - Use Javascript in project
+    - Do not hardcode, move every string to Config/String/index.js
+    - Define all style in style.js 
+    - Use Eslint to check format code
+    - Format code before commit 
+```
+Basic module
+```
+    - [Native base](https://nativebase.io/)
+    - [Axios](https://github.com/qiangmao/axios#readme)
+    - [React Navigation](https://reactnavigation.org/)
+    - [Lodash](https://lodash.com/)
+    - [Moment](https://momentjs.com/)
+```
 
 ## Table of Contents
 
