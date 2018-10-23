@@ -32,7 +32,7 @@ Basic Rules
 Class vs React.createClass vs stateless
 ```
     -If you have internal state and/or refs, prefer class extends React.Component over React.createClass. eslint: react/prefer-es6-class react/prefer-stateless-function
-
+    ```jsx
     // bad
     const Listing = React.createClass({
         // ...
@@ -48,6 +48,7 @@ Class vs React.createClass vs stateless
             return <div>{this.state.hello}</div>;
         }
     }
+    ```
     - And if you don’t have state or refs, prefer normal functions (not arrow functions) over classes:
     
     // bad
