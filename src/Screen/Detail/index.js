@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, TextInput } from 'react-native';
 import { Container, Body, Content, Header, Button, Item } from 'native-base';
 import HeaderBase from '../../Components/HeaderBase';
-import styles from './style';
 import Styles from '../../Config/Styles';
 import strings from '../../Config/Strings';
 import getNullable from '../../Config/Helper';
-import validate, { alert_validation, min, max, required, email } from '../../Config/Helper/Validators';
 
 class index extends Component {
 

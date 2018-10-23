@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import NavigationScreen from './Screen/Navigation';
+import './Config/Reactotron';
 
 
 export default class App extends Component {
