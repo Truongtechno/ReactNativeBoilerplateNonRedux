@@ -15,7 +15,8 @@ class index extends Component {
         super(props);
         this.state = {
             listData: [],
-            loading: false
+            loading: false,
+            tempId: 1111
         }
 
     }
@@ -52,7 +53,24 @@ class index extends Component {
     }
 
     onAddItemHandler = () => {
-        this.props.navigation.navigate('Detail');
+        this.props.navigation.navigate('Detail', { addValue: (value) => this.addValue(value) });
+    }
+
+    addValue(value) {
+        let newItem = {};
+        newItem.albumId = 1;
+        newItem.id = this.state.tempId;
+        newItem.title = value;
+        newItem.url = 'https://via.placeholder.com/600/92c952';
+        newItem.thumbnailUrl = 'https://via.placeholder.com/150/92c952';
+        this.setState((prevState, props) => {
+            let list = prevState.listData;
+            list.unshift(newItem);
+            return {
+                listData: list,
+                tempId: prevState.tempId + 1
+            }
+        })
     }
 
     render() {
@@ -66,10 +84,10 @@ class index extends Component {
                 <Body>
                     <Content>
                         <View style={{ justifyContent: 'center', marginVertical: 5 }}>
-                            <Button 
-                            transparent 
-                            onPress={this.onAddItemHandler}
-                            style={{ alignSelf: 'flex-end', margin: 5}}
+                            <Button
+                                transparent
+                                onPress={this.onAddItemHandler}
+                                style={{ alignSelf: 'flex-end', margin: 5 }}
                             >
                                 <Image
                                     style={{ width: 50, height: 50 }}
@@ -79,6 +97,7 @@ class index extends Component {
                         </View>
                         <Loading visible={this.state.loading} />
                         <FlatList
+                            extraData={this.state}
                             data={this.state.listData}
                             keyExtractor={(item, index) => item.id.toString()}
                             renderItem={(item) => this.renderItem(item)}

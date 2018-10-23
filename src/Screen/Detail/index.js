@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput } from 'react-native';
-import { Container, Body, Content, Header, Button } from 'native-base';
+import { Container, Body, Content, Header, Button, Item } from 'native-base';
 import HeaderBase from '../../Components/HeaderBase';
 import styles from './style';
 import Styles from '../../Config/Styles';
 import strings from '../../Config/Strings';
+import getNullable from '../../Config/Helper';
+import validate, { alert_validation, min, max, required, email } from '../../Config/Helper/Validators';
 
 class index extends Component {
 
     constructor(props) {
         super(props);
-        this.state= {
+        this.state = {
             inputValue: ''
         }
     }
 
     handleAdd = () => {
-        console.log('value:', this.state.inputValue);
+        const addValue = getNullable(['navigation', 'state', 'params', 'addValue'], this.props) || null;
+        this.props.navigation.goBack();
+        addValue(this.state.inputValue);
     }
 
     render() {
@@ -28,10 +32,10 @@ class index extends Component {
                 <Body>
                     <Content>
                         <View>
-                            <TextInput 
-                            style={{ width: 200, height: 40, borderWidth: 1, borderColor: '#CACACA', margin:10 }} 
-                            value={this.state.inputValue}
-                            onChange={(value) => this.setState({ inputValue: value})}
+                            <TextInput
+                                style={{ width: 200, height: 40, borderWidth: 1, borderColor: '#CACACA', margin: 10 }}
+                                value={this.state.inputValue}
+                                onChangeText={(value) => this.setState({ inputValue: value })}
                             />
                             <Button full style={{ flex: 1 }} onPress={this.handleAdd} >
                                 <Text style={{ flex: 1, textAlign: 'center', color: 'white', fontSize: 17 }}>Add</Text>
