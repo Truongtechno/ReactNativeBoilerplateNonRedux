@@ -19,7 +19,7 @@ class index extends Component {
                             >
                                 <Image
                                     style={styles.imageButtonLeft}
-                                    source={require('../../Assets/Images/ic_arrow_left_white.png')}
+                                    source={Images.imageArrowLeftWhite}
                                 />
                             </Button>
                         )

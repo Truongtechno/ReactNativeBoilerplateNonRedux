@@ -10,10 +10,6 @@ import Item from './Item';
 import Axios from 'axios';
 import Style from './style';
 
-
-const sourceImageAdd = require('../../Assets/Images/ic_add.png');
-
-
 class index extends Component {
 
 
@@ -86,7 +82,7 @@ class index extends Component {
                             >
                                 <Image
                                     style={Style.imageAdd}
-                                    source={sourceImageAdd}
+                                    source={Images.imageAdd}
                                 />
                             </Button>
                         </View>
