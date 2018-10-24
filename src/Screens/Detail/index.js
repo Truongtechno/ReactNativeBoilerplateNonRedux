@@ -3,7 +3,8 @@ import { Text, View, TextInput } from 'react-native';
 import { Container, Body, Content, Header, Button, Item } from 'native-base';
 import HeaderBase from '../../Components/HeaderBase';
 import Config from '../../Config';
-import getNullable from '../../Config/Helper';
+import Localization from '../../Localization';
+import getNullable from '../../Helper';
 import Style from './style';
 
 class index extends Component {
@@ -25,7 +26,7 @@ class index extends Component {
         return (
             <Container>
                 <Header style={Config.Styles.header}>
-                    <HeaderBase title={Config.String.detailScreen.titleHeader} navigation={this.props.navigation} />
+                    <HeaderBase title={Localization.detailScreen.titleHeader} navigation={this.props.navigation} />
                 </Header>
                 <Body>
                     <Content>

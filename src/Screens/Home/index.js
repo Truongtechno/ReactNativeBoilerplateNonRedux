@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Text, View, FlatList, Image } from 'react-native';
 import { Container, Body, Content, Header, Footer, Button } from 'native-base';
 import Config from '../../Config';
+import Localization from '../../Localization';
 import HeaderBase from '../../Components/HeaderBase';
 import Loading from '../../Components/Loading';
+import Images from '../../Assets/Images';
 import Item from './Item';
 import Axios from 'axios';
 import Style from './style';
@@ -71,7 +73,7 @@ class index extends Component {
             <Container>
                 <Header style={Config.Styles.header}>
                     <HeaderBase
-                        title={Config.String.homeScreen.titleHeader}
+                        title={Localization.homeScreen.titleHeader}
                     />
                 </Header>
                 <Body>

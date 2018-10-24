@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import NavigationScreen from './Screen/Navigation';
+import NavigationScreen from './Screens/Navigation';
 import './Config/Reactotron';
 import axios from 'axios';
 
