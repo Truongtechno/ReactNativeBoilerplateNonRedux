@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList, Image } from 'react-native';
+import { Text, View, FlatList, Image, Platform } from 'react-native';
 import { Container, Body, Content, Header, Footer, Button } from 'native-base';
 import Config from '../../Config';
 import Localization from '../../Localization';
@@ -95,7 +95,6 @@ class index extends Component {
                         />
                     </Content>
                 </Body>
-                <Footer />
             </Container>
         );
     }
