@@ -6,6 +6,7 @@ import Config from '../../Config';
 import Localization from '../../Localization';
 import getNullable from '../../Helper';
 import Style from './style';
+import validateInput from '../../Helper/Validate';
 
 class index extends Component {
 
@@ -14,9 +15,22 @@ class index extends Component {
         this.state = {
             inputValue: ''
         }
+        this.validation = {
+            name: {
+                length: {
+                    minimum: 5,
+                    message: 'Your input at least 5 character'
+                  }
+            }
+        }
     }
 
     handleAdd = () => {
+        const errorInput =  validateInput('name', this.state.inputValue, this.validation);
+        if(errorInput != null) {
+            alert(errorInput)
+            return;
+        }
         const addValue = getNullable(['navigation', 'state', 'params', 'addValue'], this.props) || null;
         this.props.navigation.goBack();
         addValue(this.state.inputValue);
